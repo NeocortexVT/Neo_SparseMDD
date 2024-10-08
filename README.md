@@ -12,9 +12,8 @@ The Sparse MDD plugin is a plugin for VNyan that works around this limitation by
 ## Adding the plugin to VNyan
 
 ## How to set up your model and MDD blend shapes
-### How to create an MDD animation
-
 ### Modifying the blend shapes for Sparse MDD
+For a tutorial on how to convert animations to MDD, see [this video](https://www.youtube.com/watch?v=sdl-jpZ0NR0&).
 
 ### Configuring the MDD blend shapes in Unity
 
