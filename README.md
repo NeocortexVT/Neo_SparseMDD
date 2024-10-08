@@ -27,7 +27,7 @@ Then, set the "Relative to" value for each shape key to the previous remaining s
 
 ![An image of the same shape keys as the previous image, but zoomed in on the settings below. The shape key list goes from "frame_0013" to "frame_0019", with the even numbers having been removed. Shape key "frame_0015" is selected, and its "Relative to" value has been set to "frame_0013".](/images/MDD_tutorial4.png)
 
-Finally, make sure that all the key shapes are listed in the correct order and uninterrupted by other shape keys. Shape keys should have completely unique names unless different animations on different meshes are part of the same final animation; in this case the remaining shape keys should match exactly in terms on names and shape key pruning. If all this is done, you can export the model as .fbx as you would normally.
+Finally, make sure that all the key shapes are listed in the correct order and uninterrupted by other shape keys. Shape keys should have completely unique names unless different animations on different meshes are part of the same final animation; in this case the remaining shape keys should match exactly in terms on names and shape key pruning across the objects. If all this is done, you can export the model as .fbx as you would normally.
 
 ### Configuring the MDD blend shapes in Unity
 First, import the .fbx into Unity and convert it into a .vrm.
