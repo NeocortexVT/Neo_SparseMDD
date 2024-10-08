@@ -15,13 +15,16 @@ The Sparse MDD plugin is a plugin for VNyan that works around this limitation by
 ### Modifying the blend shapes for Sparse MDD in Blender
 For a tutorial on how to convert animations to MDD, see [this video](https://www.youtube.com/watch?v=sdl-jpZ0NR0&).
 Once you have converted your animation to mdd and reimported it, your blender should look something like this:
+
 ![A screenshot of the animation timeline in Blender with key frames set up for every frame.](/images/MDD_tutorial1.png)
 ![A screenshot of the shape keys in the data tab of an object in Blender. There is a shape key for each frame, named "frame_xxxx" where xxxx is a number between 0000 and 9999, here ranging from 71-98.](/images/MDD_tutorial2.png)
 
 Next up, it is time to prune the shape keys. By doing this, the size of the model will remain manageable. See the image below for the example of the explosion animation. In this image two out of every three shape keys are removed from frames 19 to 34, four out of five shape keys are removed for frames 34 to 99, and nine out of ten shape keys are removed for frames 99 to 179. The assumption is that the frames between, for example, frames 19 and 22 can be approximated as a linear transition from frame 19 to frame 22. In the case of the explosion animation, we assume that there is more (non-linear) information in the early frames, where there is a lot of movement and many interactions with the collider, and less information in the later frames, where the movement of each polygon is much slower and no longer strongly influenced by the colliders, thus more linear. For the sake of convenience, it is advaced to keep the number of kept frames as consistent as possible for as many frames as possible (e.g. in the example below, 2/3 frames are removed for 15 frames, 4/5 frames are removed for 65 frames, and 9/10 frames are removed for 80 frames, rather than removing a random number for every step).
+
 ![An image of the same shape keys as the previous image, but shape keys have been removed as described above.](/images/MDD_tutorial3.png)
 
 Then, set the "Relative to" value for each shape key to the previous remaining shape key in the animation (e.g. frame_0017 should be set relative to frame_0015, and frame_0019 should be set relative to frame_0017). This ensures that the shape key's transformation is set in relation to the one it is set relative to, and iterating over the "Value" value entails a smooth shift from the previous shape key to the selected one.
+
 ![An image of the same shape keys as the previous image, but zoomed in on the settings below. The shape key list goes from "frame_0013" to "frame_0019", with the even numbers having been removed. Shape key "frame_0015" is selected, and its "Relative to" value has been set to "frame_0013".](/images/MDD_tutorial4.png)
 
 Finally, make sure that all the key shapes are listed in the correct order and uninterrupted by other shape keys. Shape keys should have completely unique names unless different animations on different meshes are part of the same final animation; in this case the remaining shape keys should match exactly in terms on names and shape key pruning. If all this is done, you can export the model as .fbx as you would normally.
