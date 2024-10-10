@@ -35,7 +35,7 @@ Finally, make sure that all the key shapes are listed in the correct order and u
 Set up each of the blend shapes as you normally would for VNyan, but make sure that the names of the blend shapes on the mesh and in VNyan will be identical (e.g. when setting up blend shape clips for a VRM/Vsfavatar model, make sure the blend shape clip names are identical to their respective blend shapes).
 
 ### Configuring the plugin and VNyan for use
-The settings for the MDD animations can be set in two ways: either though the plugin UI in VNyan, or by setting the parameter values through VNyan's node graphs. The plugin UI allows for more convenient entry of the relevant values. The node graph configuration allows for different animations and configurations to be selected via hotkeys. The names of the parameters in the plugin UI, followed by the related VNyan parameter and an explanation of the parameter are as follows:
+The settings for the MDD animations can be set in two ways: either though the plugin UI in VNyan, or by setting the parameter values through VNyan's node graphs. The plugin UI allows for more convenient entry of the relevant values. The node graph configuration allows for different animations and configurations to be selected via hotkeys. The names of the parameters in the plugin UI, followed by the related VNyan parameter in parentheses and an explanation of the parameter are as follows:
 
 - Name of Object (mdd_animobject; string value):
   The name of the object/mesh with the blend shapes that make up the animation. This must be an exact match with the name of the object/mesh (e.g. capitalisation). To set this value through the node graph system, make sure to use the Set Text Parameter node.
