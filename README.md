@@ -46,7 +46,7 @@ The settings for the MDD animations can be set in two ways: either though the pl
 - Frames between blend shapes (mdd_nsteplist; list of ints):
   A comma-separated list of integers containing the number of frames between each blend shape of the animation. In the example of the third image above, these values would be 2 (up to blend shape 14),3 (up to blend shape 19),5 (up to blend shape 32),10 (up to blend shape 40) (and 1,2,3,5,10 with the off-screen blend shapes included). To set this value through the node graph system, make sure to use the Set Text Parameter node.
 
-- # of frames after animation before reset (mdd_nexitframes; int):
+- \# of frames after animation before reset (mdd_nexitframes; int):
 
 - Offset in blend shape list (mdd_blendshapeoffset; int):
 
