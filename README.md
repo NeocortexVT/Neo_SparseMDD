@@ -10,7 +10,7 @@ The Sparse MDD plugin is a plugin for VNyan that works around this limitation to
 <!--Insert example of explosion with indication of non-linear relation between frames at start and linear at the end-->
 See for example the animation below, where an exploding mesh collides with another mesh. Moving from the base state of the mesh to the last frame in a linear fashion (as would be the case when using a single shape key) would mean polygons have to travel through the mesh. Instead, by keeping a lot of the MDD shape keys at the start, the animation is recreated faithfully. Later on, the movement from one frame to another no longer passes through the collider, and so the intermediary shape keys can be pruned.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PlAA1WNuMfM?si=cZErAzP5fXktXrhf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+https://youtu.be/PlAA1WNuMfM
 
 ## Adding the plugin to VNyan
 <!--Insert link to Itch and instructions to add the contents to the Asssets folder-->
