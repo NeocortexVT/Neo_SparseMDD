@@ -13,7 +13,7 @@ See for example the animation below, where an exploding mesh collides with anoth
 https://github.com/user-attachments/assets/fcfc5c24-ccec-4cac-9fe2-156ef64469b1
 
 ## Adding the plugin to VNyan
-<!--Insert link to Itch and instructions to add the contents to the Asssets folder-->
+To install the plugin, please go to the [Itch page](https://neocortexvt.itch.io/sparse-mdd-plugin-for-vnyan) and download the zip-file from there. Extract the files into the VNyan/Items/Assemblies folder. Make sure 3rd party plugins are enabled in VNyan under the Settings>Misc menu. After that, restart VNyan and it should be ready to go.
 
 ## How to set up your model and MDD blend shapes
 ### Modifying the blend shapes for Sparse MDD in Blender
