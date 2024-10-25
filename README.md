@@ -8,6 +8,9 @@ The problem with MDD animations is that for each frame, a blend shape is stored,
 
 The Sparse MDD plugin is a plugin for VNyan that works around this limitation to allow MDD animations to be created for vtuber models. By pruning the number of blend shapes, and iterating over the remaining blend shapes, the original animation can be approximated. The underlying assumption is that moving from one blend shape to the next is roughly linear, and going between blend shapes in a manner proportional to the number of blend shapes (i.e. frames) that were pruned gives a desirable result. The plugin is configured in such a way that the density of the pruning does not have to be homogenous across the full animation, so non-linear effects can easily be maintained, but also maximally optimise the number of blend shapes. 
 <!--Insert example of explosion with indication of non-linear relation between frames at start and linear at the end-->
+See for example the animation below, where an exploding mesh collides with another mesh. Moving from the base state of the mesh to the last frame in a linear fashion (as would be the case when using a single shape key) would mean polygons have to travel through the mesh. Instead, by keeping a lot of the MDD shape keys at the start, the animation is recreated faithfully. Later on, the movement from one frame to another no longer passes through the collider, and so the intermediary shape keys can be pruned.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PlAA1WNuMfM?si=cZErAzP5fXktXrhf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Adding the plugin to VNyan
 <!--Insert link to Itch and instructions to add the contents to the Asssets folder-->
