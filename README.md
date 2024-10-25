@@ -40,6 +40,8 @@ Once the FBX is converted to VRM in Unity, set up blend shape clips for each ble
 ### Configuring the plugin and VNyan for use
 The settings for the MDD animations can be set in two ways: either though the plugin UI in VNyan, or by setting the parameter values through VNyan's node graphs. The plugin UI allows for more convenient entry of the relevant values. The node graph configuration allows for different animations and configurations to be selected via hotkeys. The names of the parameters in the plugin UI, followed by the related VNyan parameter in parentheses and an explanation of the parameter are as follows:
 
+![A screenshot of the plugin UI with all parameters set. The full lsit of parameters are listed below.](/images/MDD_tutorial5.png)
+
 - Name of Object (mdd_animobject; string value):
   The name of the mesh with the blend shapes that make up the animation. This must be an exact match with the name of the object in Unity (e.g. capitalisation). To set the _mdd_animobject_ value through the node graph system, make sure to use the Set Text Parameter node.
 
