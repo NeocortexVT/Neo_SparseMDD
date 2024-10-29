@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Neo_SparseMMD
+namespace Neo_SparseMDD
 {
     public class InputManager : MonoBehaviour
     {

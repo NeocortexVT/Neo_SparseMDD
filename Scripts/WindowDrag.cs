@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Neo_SparseMMD
+namespace Neo_SparseMDD
 {
     class WindowDrag : MonoBehaviour, IDragHandler, IPointerDownHandler
     {
