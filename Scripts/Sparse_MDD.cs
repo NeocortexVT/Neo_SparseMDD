@@ -48,8 +48,8 @@ namespace Neo_SparseMDD
         private int MDD_blendShapeCount = 0;
         private int MDD_maxFrame = 0;
         private int MDD_listIdx = 0;
-        private Mesh MDD_skinnedMesh;
-        
+
+        public Mesh MDD_skinnedMesh;
         public GameObject MDD_selectObj;
 
         private string blendshapeName;
@@ -182,7 +182,7 @@ namespace Neo_SparseMDD
                 
         }
 
-        public void triggerCalled(string name)
+        public void triggerCalled(string name, int val1, int val2, int val3, string val4, string val5, string val6)
         {
             // Listen for a trigger named MDD_runAnimation
             if (name == "MDD_runAnimation")
@@ -214,7 +214,7 @@ namespace Neo_SparseMDD
 
 
                     // Get the correct mesh variables (also in inactive ones).
-                    MDD_skinnedMesh = FindInActiveObjectByName(MDD_animObject);
+                    FindInActiveObjectByName(MDD_animObject);
                     // Get blend shape count on the mesh.
                     MDD_blendShapeCount = MDD_skinnedMesh.blendShapeCount;
                     // Get first blend shape name.
@@ -234,22 +234,19 @@ namespace Neo_SparseMDD
             
         }
 
-        public Mesh FindInActiveObjectByName(string name)
+        public void FindInActiveObjectByName(string name)
         {
-            Debug.Log(name);
             SkinnedMeshRenderer[] objs = Resources.FindObjectsOfTypeAll<SkinnedMeshRenderer>() as SkinnedMeshRenderer[];
             for (int i = 0; i < objs.Length; i++)
             {
                 if (objs[i].hideFlags == HideFlags.None)
                 {
-                    Debug.Log(objs[i].name);
                     if (objs[i].name == name)
                     {
-                        return objs[i].sharedMesh;
+                        MDD_skinnedMesh = objs[i].sharedMesh;
                     }
                 }
             }
-            return null;
         }
 
         public void Start()
@@ -285,7 +282,7 @@ namespace Neo_SparseMDD
                     // Increase the current blendshape value by the step size.
                     MDD_shapeSize += MDD_stepSize;
                     VNyanInterface.VNyanInterface.VNyanAvatar.setBlendshapeOverride(blendshapeName, (MDD_shapeSize + MDD_shapeMod)/100);
-                    
+
                     // If the blendshape has been maxed out.
                     if (MDD_shapeSize+MDD_shapeMod == 100)
                     {
@@ -297,7 +294,7 @@ namespace Neo_SparseMDD
                         blendshapeName = MDD_skinnedMesh.GetBlendShapeName(MDD_shapeIdx);
 
                         // If the animation has reached the last blendshape of the current step size.
-                        if (MDD_shapeIdx == MDD_keyFrameList[MDD_listIdx])
+                        if (MDD_shapeIdx == MDD_keyFrameList[MDD_listIdx] & MDD_listIdx < MDD_keyFrameList.Count)
 		                {
                             // Get the next step size values.
 		                    MDD_listIdx++;
@@ -328,7 +325,7 @@ namespace Neo_SparseMDD
                         VNyanInterface.VNyanInterface.VNyanAvatar.clearBlendshapeOverride(blendshapeName);
                     }
 
-                    VNyanInterface.VNyanInterface.VNyanTrigger.callTrigger("MDD_exitAnimation");
+                    VNyanInterface.VNyanInterface.VNyanTrigger.callTrigger("MDD_exitAnimation",0,0,0,"","","");
                  
                 }
             }
